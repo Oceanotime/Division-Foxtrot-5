@@ -337,7 +337,13 @@ const FormaAM = new EmbedBuilder ()
             
         }
 
-        message.channel.send({ embeds : [formaEmbed]});
+        message.channel.send({ embeds : [formaEmbed]})
+
+    } else {
+        if(message.content === "!!forma"){
+            message.delete(1)
+            message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour effectuer une formation initiale, ${message.author}.`)
+        }
     }
     
 
