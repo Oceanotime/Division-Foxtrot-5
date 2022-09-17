@@ -25,7 +25,7 @@ client.on("messageCreate", message => {
     console.log(`[CONSOLE] (GENERAL) : ${message.author.username} a écrit "${message}" dans le salon ${message.channel.name}.`)
 
     const sessionRole = message.member.roles.cache.find(r => r.id === "938124389046698075");
-    const insRole = message.member.roles.cache.find(r => r.id === "938124467174010950")
+    const insRole = message.member.roles.cache.find(r => r.id === "938124467174010950");
 
 
 
@@ -304,13 +304,13 @@ const FormaAM = new EmbedBuilder ()
         }
     }
 
+    
+
     if(insRole){
         if(message.content === "!!forma"){
 
             
-            message.delete(1)
-
-            const formaEmbed = new EmbedBuilder ()
+            const formaInitEmbed = new EmbedBuilder ()
             .setColor("#ffd200")
             .setTitle("Une formation initiale a été lancée !")
             .setDescription(`Une formation intiale pour les ${"<@&939616311158378546>"} a été lancée ! Rejoignez-nous maintenant à la base pour poursuivre votre apprentissage.`)
@@ -332,10 +332,12 @@ const FormaAM = new EmbedBuilder ()
             )
             .setTimestamp()
             .setThumbnail("https://cdn3.emoji.gg/emojis/6031-modshield.png")
-            
-        }
 
-        message.channel.send({ embeds : [formaEmbed]})
+            
+
+            message.delete(1)
+            message.channel.send({ embeds : [formaInitEmbed]}); 
+        }
 
     } else {
         if(message.content === "!!forma"){
