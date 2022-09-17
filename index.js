@@ -26,7 +26,7 @@ client.on("messageCreate", message => {
 
     const sessionRole = message.member.roles.cache.find(r => r.id === "938124389046698075");
 
-
+    const insRole = message.guild.roles.cache.find(r => r.id === "938124467174010950");
 
 
 
@@ -304,6 +304,40 @@ const FormaAM = new EmbedBuilder ()
             console.log(`[CONSOLE] (FORMA) : ${message.author.username} a tenté de lancer une formation spécialisée ; sans succès.`)
         
         }
+    }
+
+    if(insRole){
+        if(message.content === "!!forma"){
+
+            
+            message.delete(1)
+
+            const formaEmbed = new EmbedBuilder ()
+            .setColor("#ffd200")
+            .setTitle("Une formation initiale a été lancée !")
+            .setDescription(`Une formation intiale pour les ${"<@&939616311158378546>"} a été lancée ! Rejoignez-nous maintenant à la base pour poursuivre votre apprentissage.`)
+            .setFields(
+                {
+                    name: "・__Host :__",
+                    value: `${ message.author }`
+                },
+                {
+                    name : "・__Mention :__",
+                    value : `${"<@&939616311158378546>"}`
+                }
+            )
+            .setFooter(
+                {
+                    text: `D.G.A. | Division Phoenix II`,
+                    iconURL: "https://i.imgur.com/Zdlboz5.png"
+                }
+            )
+            .setTimestamp()
+            .setThumbnail("https://cdn3.emoji.gg/emojis/6031-modshield.png")
+            
+        }
+
+        message.channel.send({ embeds : [formaEmbed]});
     }
     
 
