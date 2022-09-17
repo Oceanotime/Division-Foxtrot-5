@@ -25,9 +25,7 @@ client.on("messageCreate", message => {
     console.log(`[CONSOLE] (GENERAL) : ${message.author.username} a écrit "${message}" dans le salon ${message.channel.name}.`)
 
     const sessionRole = message.member.roles.cache.find(r => r.id === "938124389046698075");
-
-    const insRole = message.guild.roles.cache.find(r => r.id === "938124467174010950");
-
+    const insRole = message.member.roles.cache.find(r => r.id === "938124467174010950")
 
 
 
