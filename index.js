@@ -76,9 +76,6 @@ client.on("messageCreate", message => {
                 message.channel.send({ embeds : [helpEmbed]});
     
         }
-    } else {
-        message.delete(1)
-        message.reply(`Merci de réessayer dans un salon adapté : ${"<#1018298859794997349>"}.`)
     }
 
 
@@ -92,9 +89,9 @@ client.on("messageCreate", message => {
 
 
     if(sessionRole){
-        if(message.content === "!!session"){
+        if(message.channelId === '938114274595856475','1019589300729421865'){
             
-            if(message.channelId === '938114274595856475'){
+            if(message.content === "!!session"){
                     
 
                 console.log(`[CONSOLE] (SESSION) : Le message "sessionEmbed" a été envoyé. `)
@@ -127,10 +124,7 @@ client.on("messageCreate", message => {
         
                 message.channel.send({ embeds: [sessionEmbed]});
 
-            } else {
-                message.delete(1)
-                message.reply(`Merci de réessayer dans un salon adéquat : ${"<#938114274595856475>"}`)
-            }
+            } 
 
         } else {
             if(message.content === "!!session"){
@@ -264,7 +258,7 @@ const FormaAM = new EmbedBuilder ()
 // Commande !!formaspé (Formations Spécialisées)
 
 
-    if(message.channelId === '938114441772425266'){
+    if(message.channelId === '938114441772425266','1019589300729421865'){
 
         if(message.content === "!!formaspé"){
 
@@ -312,15 +306,12 @@ const FormaAM = new EmbedBuilder ()
             
             }
         }
-    } else {
-        message.delete(1)
-        message.reply(`Merci de réessayer dans un salon adéquat : ${"<#938114441772425266>"}`)
     }
 
     
 
 
-    if(message.channelId === '938114441772425266'){
+    if(message.channelId === '938114441772425266','1019589300729421865'){
 
         if(insRole){
             if(message.content === "!!forma"){
@@ -361,9 +352,6 @@ const FormaAM = new EmbedBuilder ()
                 message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour effectuer une formation initiale, ${message.author}.`)
             }
         }
-    } else {
-        message.delete(1)
-        message.reply(`Merci de réessayer dans un salon adéquat : ${"<#938114441772425266>"}`)
     }
     
 
