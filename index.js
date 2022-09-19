@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, EmbedBuilder, Guild, Role, Embed } = require ("discord.js");
+const { Client, GatewayIntentBits, EmbedBuilder} = require ("discord.js");
 
 const client = new Client ({
     intents : [
@@ -29,53 +29,52 @@ client.on("messageCreate", message => {
 
 
 
+    if(message.channelId === '1018298859794997349'){
+        if(message.content === "!!help"){
 
-
-
-    if(message.content === "!!help"){
-
-        console.log(`[CONSOLE] (HELP) : Le message "helpEmbed" a été envoyé.`)
-
-        message.delete(1)
-
-        const helpEmbed = new EmbedBuilder()
-            .setColor("#ffd200")
-            .setTitle(`Voilà de l'aide, ${message.author.username}.`)
-            .setDescription(`Vous trouverez ci-dessous toutes les informations nécessaires. Si jamais vous n'avez pas de réponse, merci de vous adresser à l'un de nos opérateurs.`)
-            .setFields(
-                {
-                    name: `・__Règlement :__`,
-                    value: `・**Canal :** ${"<#937635380725968916>"} \n *Dans ce salon figure le règlement de la division. Nous comptons sur vous pour le respecter sous peine de sanctions. Y figurent aussi quelques règles primordiales du RP.*`
-
-                },
-                {
-                    name: `・__Informations sur la Division :__`,
-                    value: `・**Canaux :** ${"<#1017881994731982950>"} \n *Ce salon vous permettra de voir quelques informations supplémentaires sur la Division, telle que la hiérarchie ou encore.*`
-                },
-                {
-                    name: `・__Annonces :__`,
-                    value: `・**Canaux :** ${"<#939925933102608434>"} & ${"<#938114274595856475>"} \n *Dans ces salons figureront toutes les annonces générales, ainsi que les annonces de session.*`
-                },
-                {
-                    name: `・__Le Messe :__`,
-                    value: `・**Canaux :** ${"<#937425444096073791>"}, ${"<#1018298733273817159>"} & ${"<#973646423721652355>"} \n *Ces salons constituent les principaux canaux de discussion généraux de la division. Pour toute idée, n'hésitez pas à nous la proposer dans le salon adéquat !*`
-                },
-                {
-                    name: `・__Recrutements :__`,
-                    value: `・**Canal :** ${"<#1018293364417900544>"} \n *Ce salon permet aux civils de faire leur candidature pour nous rejoindre !*`
-                },
-            )
-
-            .setTimestamp()
-            .setFooter(
-                {
-                    text: `D.G.A. | Division Phoenix II`,
-                    iconURL: "https://i.imgur.com/Zdlboz5.png"
-                }
-            )
-
-            message.channel.send({ embeds : [helpEmbed]});
-
+            console.log(`[CONSOLE] (HELP) : Le message "helpEmbed" a été envoyé.`)
+    
+            message.delete(1)
+    
+            const helpEmbed = new EmbedBuilder()
+                .setColor("#ffd200")
+                .setTitle(`Voilà de l'aide, ${message.author.username}.`)
+                .setDescription(`Vous trouverez ci-dessous toutes les informations nécessaires. Si jamais vous n'avez pas de réponse, merci de vous adresser à l'un de nos opérateurs.`)
+                .setFields(
+                    {
+                        name: `・__Règlement :__`,
+                        value: `・**Canal :** ${"<#937635380725968916>"} \n *Dans ce salon figure le règlement de la division. Nous comptons sur vous pour le respecter sous peine de sanctions. Y figurent aussi quelques règles primordiales du RP.*`
+    
+                    },
+                    {
+                        name: `・__Informations sur la Division :__`,
+                        value: `・**Canaux :** ${"<#1017881994731982950>"} \n *Ce salon vous permettra de voir quelques informations supplémentaires sur la Division, telle que la hiérarchie ou encore.*`
+                    },
+                    {
+                        name: `・__Annonces :__`,
+                        value: `・**Canaux :** ${"<#939925933102608434>"} & ${"<#938114274595856475>"} \n *Dans ces salons figureront toutes les annonces générales, ainsi que les annonces de session.*`
+                    },
+                    {
+                        name: `・__Le Messe :__`,
+                        value: `・**Canaux :** ${"<#937425444096073791>"}, ${"<#1018298733273817159>"} & ${"<#973646423721652355>"} \n *Ces salons constituent les principaux canaux de discussion généraux de la division. Pour toute idée, n'hésitez pas à nous la proposer dans le salon adéquat !*`
+                    },
+                    {
+                        name: `・__Recrutements :__`,
+                        value: `・**Canal :** ${"<#1018293364417900544>"} \n *Ce salon permet aux civils de faire leur candidature pour nous rejoindre !*`
+                    },
+                )
+    
+                .setTimestamp()
+                .setFooter(
+                    {
+                        text: `D.G.A. | Division Phoenix II`,
+                        iconURL: "https://i.imgur.com/Zdlboz5.png"
+                    }
+                )
+    
+                message.channel.send({ embeds : [helpEmbed]});
+    
+        }
     }
 
 
@@ -87,48 +86,49 @@ client.on("messageCreate", message => {
 
 
 
+    if(message.channelId === '938114274595856475'){
+        if(sessionRole){
+            if(message.content === "!!session"){
 
-    if(sessionRole){
-        if(message.content === "!!session"){
+                console.log(`[CONSOLE] (SESSION) : Le message "sessionEmbed" a été envoyé. `)
 
-            console.log(`[CONSOLE] (SESSION) : Le message "sessionEmbed" a été envoyé. `)
+                message.delete(1)
 
-            message.delete(1)
+                const sessionEmbed = new EmbedBuilder()
+                .setColor("#ffd200")
+                .setTitle(`Une nouvelle session a été lancée !`)
+                .setDescription(`Nous attendons tous les opérateurs pour la session !`)
+                .setFields(
+                    {
+                        name: "・__Host :__",
+                        value: `${ message.author }`
+                    },
+                    {
+                        name : "・__Mention :__",
+                        value : `${"<@&1019578055078989834>"}`
+                    }
+                )
+                .setFooter(
+                    {
+                        text: `D.G.A. | Division Phoenix II`,
+                        iconURL: "https://i.imgur.com/Zdlboz5.png"
+                    }
+                )
+                .setTimestamp()
+                .setThumbnail("https://cdn3.emoji.gg/emojis/9098-blurple-announcements.png")
+        
+        
+                message.channel.send({ embeds: [sessionEmbed]});
+            }
 
-            const sessionEmbed = new EmbedBuilder()
-            .setColor("#ffd200")
-            .setTitle(`Une nouvelle session a été lancée !`)
-            .setDescription(`Nous attendons tous les opérateurs pour la session !`)
-            .setFields(
-                {
-                    name: "・__Host :__",
-                    value: `${ message.author }`
-                },
-                {
-                    name : "・__Mention :__",
-                    value : `${"<@&1019578055078989834>"}`
-                }
-            )
-            .setFooter(
-                {
-                    text: `D.G.A. | Division Phoenix II`,
-                    iconURL: "https://i.imgur.com/Zdlboz5.png"
-                }
-            )
-            .setTimestamp()
-            .setThumbnail("https://cdn3.emoji.gg/emojis/9098-blurple-announcements.png")
-    
-    
-            message.channel.send({ embeds: [sessionEmbed]});
-        }
+        } else {
+            if(message.content === "!!session"){
+                message.delete(1)
 
-    } else {
-        if(message.content === "!!session"){
-            message.delete(1)
+                console.log(`[CONSOLE] (SESSION) : ${message.author} a essayé de lancer une session ; sans succès.`)
 
-            console.log(`[CONSOLE] (SESSION) : ${message.author} a essayé de lancer une session ; sans succès.`)
-
-            message.reply("Navré, mais vous n'avez pas les autorisations requises pour lancer de sessions.")
+                message.reply("Navré, mais vous n'avez pas les autorisations requises pour lancer de sessions.")
+            }
         }
     }
 
@@ -253,100 +253,105 @@ const FormaAM = new EmbedBuilder ()
 
 
 
+// Commande !!formaspé (Formations Spécialisées)
 
 
+    if(message.channelId === '938114441772425266'){
 
-
-    if(message.content === "!!formaspé"){
-
-        message.delete(1)
-
-        if(message.author.id === ""){
-            
-            message.channel.send({ embeds : [FormaTE]})
-
-            console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaTE" a été envoyé.`)
-            
-            
-
-        }   
-   
-        if(message.author.id === "371356468148043779"){
-
-            message.channel.send({ embeds : [FormaPL]})
-
-            console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaPL" a été envoyé.`)
-
-        }
-
-        if(message.author.id === "840307599547432960"){
-
-            message.channel.send({ embeds : [FormaMD]})
-
-            console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaMD" a été envoyé.`)
-            
-        }
-
-        if(message.author.id === "371356468148043778"){
-
-            message.channel.send({ embeds : [FormaAM]})
-
-            console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaAM" a été envoyé.`)
-            
-        }
-
-    }  else {
         if(message.content === "!!formaspé"){
-            message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour lancer une formation spécialisée, ${message.author}.`)
-        
-            console.log(`[CONSOLE] (FORMA) : ${message.author.username} a tenté de lancer une formation spécialisée ; sans succès.`)
-        
+
+            message.delete(1)
+
+            if(message.author.id === ""){
+                
+                message.channel.send({ embeds : [FormaTE]})
+
+                console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaTE" a été envoyé.`)
+                
+                
+
+            }   
+    
+            if(message.author.id === "371356468148043779"){
+
+                message.channel.send({ embeds : [FormaPL]})
+
+                console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaPL" a été envoyé.`)
+
+            }
+
+            if(message.author.id === "840307599547432960"){
+
+                message.channel.send({ embeds : [FormaMD]})
+
+                console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaMD" a été envoyé.`)
+                
+            }
+
+            if(message.author.id === "371356468148043778"){
+
+                message.channel.send({ embeds : [FormaAM]})
+
+                console.log(`[CONSOLE] (FORMA) : ${message.author.username} a lancé une formation spécialisée. L'embed "FormaAM" a été envoyé.`)
+                
+            }
+
+        }  else {
+            if(message.content === "!!formaspé"){
+                message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour lancer une formation spécialisée, ${message.author}.`)
+            
+                console.log(`[CONSOLE] (FORMA) : ${message.author.username} a tenté de lancer une formation spécialisée ; sans succès.`)
+            
+            }
         }
     }
 
     
 
-    if(insRole){
-        if(message.content === "!!forma"){
 
-            
-            const formaInitEmbed = new EmbedBuilder ()
-            .setColor("#ffd200")
-            .setTitle("Une formation initiale a été lancée !")
-            .setDescription(`Une formation intiale pour les ${"<@&939616311158378546>"} a été lancée ! Rejoignez-nous maintenant à la base pour poursuivre votre apprentissage.`)
-            .setFields(
-                {
-                    name: "・__Host :__",
-                    value: `${ message.author }`
-                },
-                {
-                    name : "・__Mention :__",
-                    value : `${"<@&939616311158378546>"}`
-                }
-            )
-            .setFooter(
-                {
-                    text: `D.G.A. | Division Phoenix II`,
-                    iconURL: "https://i.imgur.com/Zdlboz5.png"
-                }
-            )
-            .setTimestamp()
-            .setThumbnail("https://cdn3.emoji.gg/emojis/6031-modshield.png")
+    if(message.channelId === '938114441772425266'){
 
-            
-
-            message.delete(1)
-            message.channel.send({ embeds : [formaInitEmbed]}); 
-        }
-
-    } else {
-        if(message.content === "!!forma"){
-            message.delete(1)
-            message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour effectuer une formation initiale, ${message.author}.`)
+        if(insRole){
+            if(message.content === "!!forma"){
+                
+    
+                const formaInitEmbed = new EmbedBuilder ()
+                .setColor("#ffd200")
+                .setTitle("Une formation initiale a été lancée !")
+                .setDescription(`Rejoignez-nous maintenant à la base pour poursuivre votre apprentissage.`)
+                .setFields(
+                    {
+                        name: "・__Host :__",
+                        value: `${ message.author }`
+                    },
+                    {
+                        name : "・__Mention :__",
+                        value : `${"<@&939616311158378546>"}`
+                    }
+                )
+                .setFooter(
+                    {
+                        text: `D.G.A. | Division Phoenix II`,
+                        iconURL: "https://i.imgur.com/Zdlboz5.png"
+                    }
+                )
+                .setTimestamp()
+                .setThumbnail("https://cdn3.emoji.gg/emojis/6031-modshield.png")
+    
+                
+    
+                message.delete(1)
+                message.channel.send({ embeds : [formaInitEmbed]}); 
+            }
+    
+        } else {
+            if(message.content === "!!forma"){
+                message.delete(1)
+                message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour effectuer une formation initiale, ${message.author}.`)
+            }
         }
     }
     
-
 
 
 
