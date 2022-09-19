@@ -314,7 +314,7 @@ const FormaAM = new EmbedBuilder ()
     
 
 
-    if(message.channelId === '938114441772425266'){
+    if(message.channelId === '938114441772425266','1019589300729421865'){
 
         if(insRole){
             if(message.content === "!!forma"){
