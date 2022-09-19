@@ -29,8 +29,9 @@ client.on("messageCreate", message => {
 
 
 
-    if(message.channelId === '1018298859794997349'){
-        if(message.content === "!!help"){
+    if(message.content === "!!help"){
+        if(message.channelId === '1018298859794997349','1019589300729421865'){
+        
 
             console.log(`[CONSOLE] (HELP) : Le message "helpEmbed" a été envoyé.`)
     
@@ -75,6 +76,9 @@ client.on("messageCreate", message => {
                 message.channel.send({ embeds : [helpEmbed]});
     
         }
+    } else {
+        message.delete(1)
+        message.reply(`Merci de réessayer dans un salon adapté : ${"<#1018298859794997349>"}.`)
     }
 
 
@@ -86,9 +90,12 @@ client.on("messageCreate", message => {
 
 
 
-    if(message.channelId === '938114274595856475'){
-        if(sessionRole){
-            if(message.content === "!!session"){
+
+    if(sessionRole){
+        if(message.content === "!!session"){
+            
+            if(message.channelId === '938114274595856475'){
+                    
 
                 console.log(`[CONSOLE] (SESSION) : Le message "sessionEmbed" a été envoyé. `)
 
@@ -119,14 +126,15 @@ client.on("messageCreate", message => {
         
         
                 message.channel.send({ embeds: [sessionEmbed]});
+
+            } else {
+                message.delete(1)
+                message.reply(`Merci de réessayer dans un salon adéquat : ${"<#938114274595856475>"}`)
             }
 
         } else {
             if(message.content === "!!session"){
                 message.delete(1)
-
-                console.log(`[CONSOLE] (SESSION) : ${message.author} a essayé de lancer une session ; sans succès.`)
-
                 message.reply("Navré, mais vous n'avez pas les autorisations requises pour lancer de sessions.")
             }
         }
@@ -304,6 +312,9 @@ const FormaAM = new EmbedBuilder ()
             
             }
         }
+    } else {
+        message.delete(1)
+        message.reply(`Merci de réessayer dans un salon adéquat : ${"<#938114441772425266>"}`)
     }
 
     
@@ -350,6 +361,9 @@ const FormaAM = new EmbedBuilder ()
                 message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour effectuer une formation initiale, ${message.author}.`)
             }
         }
+    } else {
+        message.delete(1)
+        message.reply(`Merci de réessayer dans un salon adéquat : ${"<#938114441772425266>"}`)
     }
     
 
