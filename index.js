@@ -98,6 +98,8 @@ client.on("messageCreate", message => {
 
                 message.delete(1)
 
+                message.channel.send(`・__Mention :__ ${"<@&1019578055078989834>"}`)
+
                 const sessionEmbed = new EmbedBuilder()
                 .setColor("#ffd200")
                 .setTitle(`Une nouvelle session a été lancée !`)
@@ -108,8 +110,8 @@ client.on("messageCreate", message => {
                         value: `${ message.author }`
                     },
                     {
-                        name : "・__Mention :__",
-                        value : `${"<@&1019578055078989834>"}`
+                        name : "・__Rendez-Vous :__",
+                        value : `${"<#973646423721652355>"}`
                     }
                 )
                 .setFooter(
@@ -156,8 +158,8 @@ const FormaTE = new EmbedBuilder ()
         value: `${ message.author }`
     },
     {
-        name : "・__Mention :__",
-        value : `${"<@&937426199901274162>"}`
+        name : "・__Rendez-Vous :__",
+        value : `${"<#1018300275460673617>"}`
     }
 )
 .setFooter(
@@ -182,8 +184,8 @@ const FormaPL = new EmbedBuilder ()
         value: `${ message.author }`
     },
     {
-        name : "・__Mention :__",
-        value : `${"<@&937426199901274162>"}`
+        name : "・__Rendez-Vous :__",
+        value : `${"<#1018300275460673617>"}`
     }
 )
 .setFooter(
@@ -208,8 +210,8 @@ const FormaMD = new EmbedBuilder ()
         value: `${ message.author }`
     },
     {
-        name : "・__Mention :__",
-        value : `${"<@&937426199901274162>"}`
+        name : "・__Rendez-Vous :__",
+        value : `${"<#1018300275460673617>"}`
     }
 )
 .setFooter(
@@ -263,6 +265,7 @@ const FormaAM = new EmbedBuilder ()
         if(message.content === "!!formaspé"){
 
             message.delete(1)
+            message.channel.send(`・__Mention :__ ${"<@&937426199901274162>"}`)
 
             if(message.author.id === ""){
                 
@@ -315,6 +318,9 @@ const FormaAM = new EmbedBuilder ()
 
         if(insRole){
             if(message.content === "!!forma"){
+
+                message.delete(1)
+                message.channel.send(`・__Mention :__ ${"<@&939616311158378546>"}`)
                 
     
                 const formaInitEmbed = new EmbedBuilder ()
@@ -327,8 +333,8 @@ const FormaAM = new EmbedBuilder ()
                         value: `${ message.author }`
                     },
                     {
-                        name : "・__Mention :__",
-                        value : `${"<@&939616311158378546>"}`
+                        name : "・__Rendez-Vous :__",
+                        value : `${"<#1018300275460673617>"}`
                     }
                 )
                 .setFooter(
