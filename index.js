@@ -30,7 +30,7 @@ client.on("messageCreate", message => {
 
 
     if(message.content === "!!help"){
-        if(message.channelId === '1018298859794997349','1019589300729421865'){
+        if(message.channelId === '1018298859794997349'){
         
 
             console.log(`[CONSOLE] (HELP) : Le message "helpEmbed" a été envoyé.`)
@@ -89,7 +89,7 @@ client.on("messageCreate", message => {
 
 
     if(sessionRole){
-        if(message.channelId === '938114274595856475','1019589300729421865'){
+        if(message.channelId === '938114274595856475'){
             
             if(message.content === "!!session"){
                     
@@ -258,7 +258,7 @@ const FormaAM = new EmbedBuilder ()
 // Commande !!formaspé (Formations Spécialisées)
 
 
-    if(message.channelId === '938114441772425266','1019589300729421865'){
+    if(message.channelId === '938114441772425266'){
 
         if(message.content === "!!formaspé"){
 
@@ -311,7 +311,7 @@ const FormaAM = new EmbedBuilder ()
     
 
 
-    if(message.channelId === '938114441772425266','1019589300729421865'){
+    if(message.channelId === '938114441772425266'){
 
         if(insRole){
             if(message.content === "!!forma"){
