@@ -375,10 +375,6 @@ const FormaAM = new EmbedBuilder ()
                     {
                         name: "・__Host :__",
                         value: `${ message.author }`
-                    },
-                    {
-                        name : "・__Rendez-Vous :__",
-                        value : `${"<#1018300275460673617>"}`
                     }
                 )
                 .setFooter(
