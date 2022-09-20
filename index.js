@@ -372,10 +372,6 @@ const FormaAM = new EmbedBuilder ()
     if(message.channelId === ''){
         if(message.content === "!!promote"){
 
-            let memberPromote = message.mentions.members.first()
-            let rolePromote = message.mentions.roles()
-
-            memberPromote.roles.add(rolePromote)
         }
     }
     
