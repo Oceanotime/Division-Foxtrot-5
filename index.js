@@ -359,6 +359,16 @@ const FormaAM = new EmbedBuilder ()
             }
         }
     }
+
+    if(message.channelId === ''){
+        if(message.content === "!!promote"){
+
+            let rolePromote = message.mentions.roles.first();
+            let memberPromote = message.mentions.members.first();
+
+            memberPromote.addRole(rolePromote);
+        }
+    }
     
 
 
