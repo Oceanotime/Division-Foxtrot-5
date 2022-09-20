@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, EmbedBuilder} = require ("discord.js");
+const { Client, GatewayIntentBits, EmbedBuilder, Collection, Embed} = require ("discord.js");
 
 const client = new Client ({
     intents : [
@@ -20,10 +20,6 @@ client.on("ready", () => {
 
 client.on("messageCreate", message => {
     if(message.author.bot) return
-    if(!message.content.startsWith("!!")) return
-
-    const args = message.content.trim().split(/ +/g);
-    const cmd = args[0].slice(prefix.length).toLowerCase(' ');
 
 
 
@@ -31,11 +27,7 @@ client.on("messageCreate", message => {
 
     const sessionRole = message.member.roles.cache.find(r => r.id === "938124389046698075");
     const insRole = message.member.roles.cache.find(r => r.id === "938124467174010950");
-
-
-    if(cmd === "promote"){
-        message.channel.send(`${args[1]} est bien passé ${args[2]}.`)
-    }
+    
 
 
     if(message.content === "!!help"){
@@ -368,6 +360,45 @@ const FormaAM = new EmbedBuilder ()
             }
         }
     }
+
+
+        if(message.content === "!!votesession"){
+
+            message.delete(1)
+            message.channel.send(`・__Mention :__ ${"<@1019578055078989834>"}`)
+
+            const votesessionEmbed = new EmbedBuilder ()
+            .setColor("#ffd200")
+                .setTitle("Une vote a été émis !")
+                .setDescription(`Ce vote est pour la session qui se déroulera dans 1 heure après ce vote.`)
+                .setFields(
+                    {
+                        name: "・__Host :__",
+                        value: `${ message.author }`
+                    },
+                    {
+                        name : "・__Rendez-Vous :__",
+                        value : `${"<#1018300275460673617>"}`
+                    }
+                )
+                .setFooter(
+                    {
+                        text: `D.G.A. | Division Phoenix II`,
+                        iconURL: "https://i.imgur.com/Zdlboz5.png"
+                    }
+                )
+                .setTimestamp()
+                .setThumbnail("https://cdn3.emoji.gg/emojis/8263-blurple-members.png")
+
+
+                message.channel.send({ embeds : [votesessionEmbed]});
+
+                message.react('954506824294469722')
+                message.react('948953593615118407')
+                message.react('954506760658501662')
+
+        }
+
     
 
 
