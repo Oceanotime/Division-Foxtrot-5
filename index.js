@@ -23,7 +23,7 @@ client.on("messageCreate", message => {
     if(!message.content.startsWith("!!")) return
 
     const args = message.content.trim().split(/ +/g);
-    const cmd = args[0].slice(prefix.length).toLowerCase();
+    const cmd = args[0].slice(prefix.length).toLowerCase(' ');
 
 
 
@@ -366,12 +366,6 @@ const FormaAM = new EmbedBuilder ()
                 message.delete(1)
                 message.channel.send(`Navré, mais vous n'avez pas les permissions requises pour effectuer une formation initiale, ${message.author}.`)
             }
-        }
-    }
-
-    if(message.channelId === ''){
-        if(message.content === "!!promote"){
-
         }
     }
     
