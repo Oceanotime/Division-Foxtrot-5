@@ -393,10 +393,6 @@ const FormaAM = new EmbedBuilder ()
 
                 message.channel.send({ embeds : [votesessionEmbed]});
 
-                message.react('<:oui:954506824294469722> ')
-                message.react('<:jsp:948953593615118407>')
-                message.react('<:non:954506760658501662>')
-
         }
 
     
