@@ -365,7 +365,7 @@ const FormaAM = new EmbedBuilder ()
         if(message.content === "!!votesession"){
 
             message.delete(1)
-            message.channel.send(`・__Mention :__ ${"<@1019578055078989834>"}`)
+            message.channel.send(`・__Mention :__ ${"<@&1019578055078989834>"}`)
 
             const votesessionEmbed = new EmbedBuilder ()
             .setColor("#ffd200")
@@ -393,9 +393,9 @@ const FormaAM = new EmbedBuilder ()
 
                 message.channel.send({ embeds : [votesessionEmbed]});
 
-                message.react('954506824294469722')
-                message.react('948953593615118407')
-                message.react('954506760658501662')
+                message.react('<:oui:954506824294469722> ')
+                message.react('<:jsp:948953593615118407>')
+                message.react('<:non:954506760658501662>')
 
         }
 
