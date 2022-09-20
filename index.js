@@ -20,6 +20,11 @@ client.on("ready", () => {
 
 client.on("messageCreate", message => {
     if(message.author.bot) return
+    if(!message.content.startsWith("!!")) return
+
+    const args = message.content.trim().split(/ +/g);
+    const cmd = args[0].slice(prefix.length).toLowerCase();
+
 
 
     console.log(`[CONSOLE] (GENERAL) : ${message.author.username} a écrit "${message}" dans le salon ${message.channel.name}.`)
@@ -27,6 +32,10 @@ client.on("messageCreate", message => {
     const sessionRole = message.member.roles.cache.find(r => r.id === "938124389046698075");
     const insRole = message.member.roles.cache.find(r => r.id === "938124467174010950");
 
+
+    if(cmd === "promote"){
+        message.channel.send(`${args[1]} est bien passé ${args[2]}.`)
+    }
 
 
     if(message.content === "!!help"){
@@ -363,10 +372,10 @@ const FormaAM = new EmbedBuilder ()
     if(message.channelId === ''){
         if(message.content === "!!promote"){
 
-            let rolePromote = message.mentions.roles.first();
-            let memberPromote = message.mentions.members.first();
+            let memberPromote = message.mentions.members.first()
+            let rolePromote = message.mentions.roles()
 
-            memberPromote.addRole(rolePromote);
+            memberPromote.roles.add(rolePromote)
         }
     }
     
