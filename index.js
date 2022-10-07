@@ -268,7 +268,7 @@ const FormaAM = new EmbedBuilder ()
             message.delete(1)
             message.channel.send(`・__Mention :__ ${"<@&937426199901274162>"}`)
 
-            if(message.author.id === ""){
+            if(message.author.id === "371356468148043778"){
                 
                 message.channel.send({ embeds : [FormaTE]})
 
@@ -286,7 +286,7 @@ const FormaAM = new EmbedBuilder ()
 
             }
 
-            if(message.author.id === "840307599547432960"){
+            if(message.author.id === ""){
 
                 message.channel.send({ embeds : [FormaMD]})
 
